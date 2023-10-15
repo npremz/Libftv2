@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 11:55:36 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/14 13:57:03 by npremont         ###   ########.fr       */
+/*   Created: 2023/10/16 01:04:47 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/16 01:04:59 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	unsigned int	i;
+	size_t			j;
+	char			*str;
 
 	i = 0;
 	j = 0;
-	if (s2[j] == '\0')
-		return ((char *)s1);
-	while (s1[i] != '\0' && i < n)
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	while (s[i] != '\0' && i < start)
 	{
-		j = 0;
-		if (s1[i] == s2[j])
+		i++;
+		if (i == start)
 		{
-			while (s1[i + j] == s2[j] && s1[i] && s2[i])
-				++j;
-			if (s2[j] == '\0')
-				return ((char *)&s1[i]);
+			while (s[i] != '\0' && j < len)
+				str[j++] = s[i++];
 		}
-		++i;
 	}
-	return (NULL);
+	str[j] = '\0';
+	return (str);
 }
