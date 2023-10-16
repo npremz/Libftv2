@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 11:55:36 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 17:29:35 by npremont         ###   ########.fr       */
+/*   Created: 2023/10/16 10:00:00 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/16 11:55:49 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_stradd(char *dest, char *src)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
 
 	i = 0;
-	j = 0;
-	if (s2[j] == '\0')
-		return ((char *)s1);
-	while (s1[i] != '\0' && i < n)
+	while (src[i] != '\0')
 	{
-		j = 0;
-		if (s1[i] == s2[j])
-		{
-			while (s1[i + j] == s2[j] && s1[i + j] && s2[j] && i + j < n)
-				++j;
-			if (s2[j] == '\0')
-				return ((char *)&s1[i]);
-		}
-		++i;
+		*dest = src[i];
+		i++;
+		dest++;
 	}
-	return (NULL);
+	return (dest);
+}
+
+char	*ft_strjoin(char *prefix, char *suffix)
+{
+	char			*str;
+	unsigned long	str_size;
+
+	str_size = ft_strlen(prefix) + ft_strlen(suffix);
+	str = malloc((str_size + 1) * sizeof(char));
+	if (str == NULL)
+		return (0);
+	str = ft_stradd(str, prefix);
+	str = ft_stradd(str, suffix);
+	*str = '\0';
+	return (str - str_size);
 }

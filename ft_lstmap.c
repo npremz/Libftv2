@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 11:55:36 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 17:29:35 by npremont         ###   ########.fr       */
+/*   Created: 2023/10/16 16:27:01 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/16 16:43:37 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	size_t	j;
+	t_list	*new_lst;
+	t_list	*elem;
+	t_list	**backup;
 
-	i = 0;
-	j = 0;
-	if (s2[j] == '\0')
-		return ((char *)s1);
-	while (s1[i] != '\0' && i < n)
+	new_lst = NULL;
+	elem = NULL;
+	backup = &new_lst;
+	while (lst)
 	{
-		j = 0;
-		if (s1[i] == s2[j])
-		{
-			while (s1[i + j] == s2[j] && s1[i + j] && s2[j] && i + j < n)
-				++j;
-			if (s2[j] == '\0')
-				return ((char *)&s1[i]);
-		}
-		++i;
+		elem = ft_lstnew((*f)(lst->content));
+		if (!elem)
+			ft_lstclear(backup, (*del));
+		ft_lstadd_back(&new_lst, elem);
+		lst = lst->next;
 	}
-	return (NULL);
+	return (new_lst);
 }

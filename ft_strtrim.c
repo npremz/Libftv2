@@ -6,11 +6,11 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 01:04:06 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 01:04:07 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/16 09:47:00 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_isinset(char c, char const *set)
 {

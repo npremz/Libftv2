@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 11:55:36 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 17:29:35 by npremont         ###   ########.fr       */
+/*   Created: 2023/10/12 16:09:19 by npremont          #+#    #+#             */
+/*   Updated: 2023/10/16 16:54:00 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+size_t	strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
+	size_t	dst_size;
+	size_t	src_size;
 
+	dst_size = ft_strlen(dst);
+	src_size = ft_strlen((char *)src);
+	j = dst_size;
 	i = 0;
-	j = 0;
-	if (s2[j] == '\0')
-		return ((char *)s1);
-	while (s1[i] != '\0' && i < n)
+	if (dstsize == 0 && dstsize <= dst_size)
+		return (src_size + dstsize);
+	while (src[i] != '\0' && i < dstsize - dst_size - 1)
 	{
-		j = 0;
-		if (s1[i] == s2[j])
-		{
-			while (s1[i + j] == s2[j] && s1[i + j] && s2[j] && i + j < n)
-				++j;
-			if (s2[j] == '\0')
-				return ((char *)&s1[i]);
-		}
+		dst[j] = src[i];
 		++i;
+		++j;
 	}
-	return (NULL);
+	dst[j] = '\0';
+	return (dst_size + src_size);
 }

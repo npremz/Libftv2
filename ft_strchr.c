@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 23:17:15 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/13 23:55:44 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:21:01 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
+	if (*s == c)
+		return ((char *)s);
 	return (0);
 }

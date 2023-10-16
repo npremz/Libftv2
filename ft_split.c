@@ -6,11 +6,11 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:22:45 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 01:03:37 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/16 09:46:38 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_count(char *str, char charsep)
 {
