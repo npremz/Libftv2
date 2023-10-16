@@ -6,13 +6,15 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:43:18 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/12 13:46:39 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/17 00:32:52 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:37:52 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 16:51:46 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/17 00:05:04 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t				i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 
