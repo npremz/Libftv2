@@ -6,9 +6,11 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 00:53:00 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/17 19:48:22 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:01:39 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static void	ft_init(int *i, int *sign, long int *nb, long int *last)
 {
