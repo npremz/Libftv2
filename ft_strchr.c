@@ -6,19 +6,24 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 23:17:15 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 17:21:01 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:51:53 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	char	ch;
+
+	ch = c;
+	while (*s)
 	{
-		if (c == *s)
+		if (ch == *s)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == c)
+	if (*s == ch)
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }

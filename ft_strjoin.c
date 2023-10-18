@@ -6,13 +6,13 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:00:00 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 11:55:49 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:05:42 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_stradd(char *dest, char *src)
+static char	*ft_stradd(char *dest, char *src)
 {
 	int	i;
 

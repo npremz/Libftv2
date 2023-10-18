@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:20:55 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 18:06:53 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/17 11:37:08 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	if (dstsize > 0)
 	{
-		while (i < dstsize && src[i] != '\0')
+		while (i < dstsize - 1 && src[i] != '\0')
 		{
 			dst[i] = src[i];
 			++i;

@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 16:09:19 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/17 00:35:30 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:44:21 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	src_size = ft_strlen((char *)src);
 	j = dst_size;
 	i = 0;
-	if (dstsize == 0 && dstsize <= dst_size)
+	if (dstsize == 0 || dstsize <= dst_size)
 		return (src_size + dstsize);
 	while (src[i] != '\0' && i < dstsize - dst_size - 1)
 	{

@@ -6,16 +6,18 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:27:41 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 16:45:15 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:04:38 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_getstrsize(long int n)
+static int	ft_getstrsize(long int n)
 {
 	int	count;
 
+	if (n == 0)
+		return (1);
 	count = 0;
 	if (n < 0)
 	{
@@ -30,7 +32,7 @@ int	ft_getstrsize(long int n)
 	return (count);
 }
 
-char	*ft_putnbr_in_str(long int nb, char *str, int pos)
+static char	*ft_putnbr_in_str(long int nb, char *str, int pos)
 {
 	if (nb < 0)
 	{

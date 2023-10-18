@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:39:28 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 16:45:20 by npremont         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:19:03 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	res_str = (char *)malloc((ft_strlen((char *)s) + 1) * sizeof(char));
+	if (!res_str)
+		return (NULL);
 	while (s[i])
 	{
 		res_str[i] = (*f)(i, s[i]);
