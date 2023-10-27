@@ -62,7 +62,7 @@ On nous demande également d'y ajouter des fonctions utilitaires pour la suite d
 - `int memcmp(const void *s1, const void *s2, size_t n);` : Compare les `n` premiers octets des zones de mémoire pointées par `s1` et `s2` et renvoie un entier indiquant leur relation (plus petit, égal, ou plus grand).
 
 #### Fonction `strnstr`
-- `char *strnstr(const char *haystack, the char *needle, size_t len);` : Recherche la première occurrence de la sous-chaîne `needle` dans la chaîne `haystack`, mais au maximum dans les `len` premiers caractères de `haystack`.
+- `char *strnstr(const char *haystack, char *needle, size_t len);` : Recherche la première occurrence de la sous-chaîne `needle` dans la chaîne `haystack`, mais au maximum dans les `len` premiers caractères de `haystack`.
 
 #### Fonction `atoi`
 - `int atoi(const char *str);` : Convertit la chaîne de caractères `str` en un entier.
