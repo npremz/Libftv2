@@ -1,6 +1,5 @@
-# Libft
-Premier projet de 19 (Cursus 42), celui-ci consiste à refaire la libc.\
-On nous demande également d'y ajouter des fonctions utilitaires pour la suite du cursus.
+# Libftv2
+La Libftv2 est la lib que j'utilise réelement pour mon cursus, celle-ci contient en plus les projets du premier cercle à savoir `ft_printf` et `get_next_line` mais également diverse fonctions que j'ai coder en plus.
 
 ## FONCTIONS DE BASE
 
