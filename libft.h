@@ -6,14 +6,22 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 14:00:38 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/17 19:07:45 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:57:38 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <limits.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 19
+# endif
 
 /* STRUCTURES */
 
@@ -72,3 +80,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	*ft_strjoin_gnl(char *prefix, char *suffix, int has_fail);
+int		ft_has_newline(char *str);
+char	*get_next_line(int fd);
+void	ft_free_gnl(char **ptr, int flag, char **buff);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_printn(char *str);
+int		ft_printaddr(char *str);
+char	*ft_utoa_base(unsigned int nbr, char *base);
+char	*ft_lutoa_base(unsigned long int nbr, char *base);
+char	*ft_utoa(unsigned int n);
+int		ft_printf(const char *input, ...);
+
+#endif
