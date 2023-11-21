@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 14:00:38 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/06 11:57:38 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/21 16:51:03 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ char	*ft_utoa_base(unsigned int nbr, char *base);
 char	*ft_lutoa_base(unsigned long int nbr, char *base);
 char	*ft_utoa(unsigned int n);
 int		ft_printf(const char *input, ...);
+int		ft_isinstr(char c, char *str);
 
 #endif
