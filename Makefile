@@ -10,7 +10,7 @@ SOURCES_BON = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_
 				ft_lstmap.c ft_lstdelone.c
 
 SOURCES_PERS = get_next_line_bonus.c get_next_line_utils_bonus.c chars.c numbers.c ft_printf.c ft_utoa.c ft_utoa_base.c \
-				ft_lutoa_base.c ft_utoa.c ft_isinstr.c ft_atoi_base.c
+				ft_lutoa_base.c ft_isinstr.c ft_atoi_base.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -20,28 +20,34 @@ OBJECTS_PERS = $(SOURCES_PERS:.c=.o)
 
 HEADER = libft.h
 
-GCC_FLAGS = -Wall -Wextra -Werror
+GCC_FLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
+	@echo "\033[0;32m"
+	@echo " _     ___ ____     ____ ___  __  __ ____ ___ _     _____ ____  "
+	@echo "| |   |_ _| __ )   / ___/ _ \|  \/  |  _ \_ _| |   | ____|  _ \ "
+	@echo "| |    | ||  _ \  | |  | | | | |\/| | |_) | || |   |  _| | | | |"
+	@echo "| |___ | || |_) | | |__| |_| | |  | |  __/| || |___| |___| |_| |"
+	@echo "|_____|___|____/   \____\___/|_|  |_|_|  |___|_____|_____|____/ "
+	@echo "\033[0m"
 
 $(NAME): $(OBJECTS) $(OBJECTS_BON) $(OBJECTS_PERS)
-	ar -src $(NAME) $(OBJECTS) $(OBJECTS_BON) $(OBJECTS_PERS)
-	make clean
+	@ar -src $(NAME) $(OBJECTS) $(OBJECTS_BON) $(OBJECTS_PERS)
 
 $(OBJECTS):
-	cc $(GCC_FLAGS) -c -I $(HEADER) ${@:.o=.c} -o $@
+	@cc $(GCC_FLAGS) -c -I $(HEADER) ${@:.o=.c} -o $@
 
 $(OBJECTS_BON):
-	cc $(GCC_FLAGS) -c -I $(HEADER) ${@:.o=.c} -o $@
+	@cc $(GCC_FLAGS) -c -I $(HEADER) ${@:.o=.c} -o $@
 
 $(OBJECTS_PERS):
-	cc $(GCC_FLAGS) -c -I $(HEADER) ${@:.o=.c} -o $@
+	@cc $(GCC_FLAGS) -c -I $(HEADER) ${@:.o=.c} -o $@
 
 clean:
-	rm -f $(OBJECTS) ${OBJECTS_BON} $(OBJECTS_PERS)
+	@rm -f $(OBJECTS) ${OBJECTS_BON} $(OBJECTS_PERS)
 
 fclean:
-	rm -f $(NAME) $(OBJECTS) $(OBJECTS_BON) $(OBJECTS_PERS)
+	@rm -f $(NAME) $(OBJECTS) $(OBJECTS_BON) $(OBJECTS_PERS)
 
 re: fclean all
 
