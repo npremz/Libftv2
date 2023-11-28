@@ -1,5 +1,5 @@
 # Libftv2
-La Libftv2 est la lib que j'utilise réelement pour mon cursus, celle-ci contient en plus les projets du premier cercle à savoir `ft_printf` et `get_next_line` mais également diverse fonctions que j'ai codé en plus.
+La Libftv2 est la lib que j'utilise réelement pour mon cursus, celle-ci contient en plus les projets du premier cercle à savoir `ft_printf` et `get_next_line` mais également diverse fonctions que j'ai codé en plus. 
 
 ## FONCTIONS DE BASE
 
