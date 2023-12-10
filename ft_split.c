@@ -31,7 +31,7 @@ static int	ft_count(char *str, char charsep)
 	return (count);
 }
 
-static void	*ft_free(char **tab)
+static void	*ft_free_null(char **tab)
 {
 	size_t	i;
 
@@ -93,7 +93,7 @@ char	**ft_split(char const *s, char charsep)
 	str = (char *)s;
 	str_tab = (char **)malloc(sizeof(char *) * (ft_count(str, charsep) + 1));
 	if (!str_tab || ft_stralloc(str, charsep, str_tab) == 0)
-		return (ft_free(str_tab));
+		return (ft_free_null(str_tab));
 	ft_init(&i, &array_i, &str_i);
 	while (str[i] != '\0')
 	{
