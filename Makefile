@@ -18,7 +18,7 @@ OBJECTS_BON = $(SOURCES_BON:.c=.o)
 
 OBJECTS_PERS = $(SOURCES_PERS:.c=.o)
 
-HEADER = libft.h
+HEADER = .
 
 GCC_FLAGS = -Wall -Wextra -Werror -g
 
